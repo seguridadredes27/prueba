@@ -1,0 +1,21 @@
+- hosts: servers
+  user: root
+
+  tasks:
+    ##
+    # git pull
+    ##
+    - name: pull changes
+      shell: chdir=/home/ian/Documentos/repo_prueba git pull https://seguridadredes27:holamundo27!@github.com/seguridadredes27/prueba.git master
+
+    ##
+    # Reinicio de servicios
+    ##
+    - name: Restart Nginx
+      action: service name=nginx state=restarted
+
+    - name: Restart Gunicorn
+      action: service name=gunicorn state=restarted
+
+    - name: Restart Celery
+      action: service name=celery state=restarted
