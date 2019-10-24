@@ -1,0 +1,6 @@
+---
+- hosts: servers
+  become: true
+  tasks:
+  - name: Remove User
+    user: name=prueba state=absent remove=yes force=yes
