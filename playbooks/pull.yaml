@@ -5,8 +5,8 @@
     ##
     # git pull
     ##
-    - name: pull changes
-      shell: chdir=/home/ian/Documentos/repo_prueba git pull https://seguridadredes27:holamundo27!@github.com/seguridadredes27/prueba.git master
+    - name: Git Pull
+      shell: chdir=/home/ian/Documentos/prueba git pull https://seguridadredes27:holamundo27!@github.com/seguridadredes27/prueba.git master
 
     ##
     # Reinicio de servicios
@@ -16,6 +16,3 @@
 
     - name: Restart Gunicorn
       action: service name=gunicorn state=restarted
-
-    - name: Restart Celery
-      action: service name=celery state=restarted
